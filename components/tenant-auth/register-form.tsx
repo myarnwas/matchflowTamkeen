@@ -57,10 +57,10 @@ export function RegisterForm() {
       )}
 
       <div className="space-y-2">
-        <Label htmlFor="companyName">Company name</Label>
+        <Label htmlFor="companyName">اسم الشركة</Label>
         <Input
           id="companyName"
-          placeholder="Acme Financial"
+          placeholder="مثال: شركة الأفق المالية"
           aria-invalid={!!errors.companyName}
           {...register("companyName")}
         />
@@ -72,11 +72,11 @@ export function RegisterForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="fullName">Your full name</Label>
+        <Label htmlFor="fullName">اسمك الكامل</Label>
         <Input
           id="fullName"
           autoComplete="name"
-          placeholder="Jane Doe"
+          placeholder="مثال: أحمد خالد"
           aria-invalid={!!errors.fullName}
           {...register("fullName")}
         />
@@ -86,11 +86,13 @@ export function RegisterForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="email">Work email</Label>
+        <Label htmlFor="email">البريد الإلكتروني للعمل</Label>
         <Input
           id="email"
           type="email"
           autoComplete="email"
+          dir="ltr"
+          className="text-start"
           placeholder="you@company.com"
           aria-invalid={!!errors.email}
           {...register("email")}
@@ -101,11 +103,13 @@ export function RegisterForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="password">Password</Label>
+        <Label htmlFor="password">كلمة المرور</Label>
         <Input
           id="password"
           type="password"
           autoComplete="new-password"
+          dir="ltr"
+          className="text-start"
           placeholder="••••••••"
           aria-invalid={!!errors.password}
           {...register("password")}
@@ -116,11 +120,13 @@ export function RegisterForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="confirmPassword">Confirm password</Label>
+        <Label htmlFor="confirmPassword">تأكيد كلمة المرور</Label>
         <Input
           id="confirmPassword"
           type="password"
           autoComplete="new-password"
+          dir="ltr"
+          className="text-start"
           placeholder="••••••••"
           aria-invalid={!!errors.confirmPassword}
           {...register("confirmPassword")}
@@ -133,13 +139,13 @@ export function RegisterForm() {
       </div>
 
       <Button type="submit" className="w-full" disabled={isPending}>
-        {isPending ? "Creating account…" : "Create account"}
+        {isPending ? "جارٍ إنشاء الحساب…" : "إنشاء الحساب"}
       </Button>
 
       <p className="text-center text-sm text-muted-foreground">
-        Already have an account?{" "}
+        لديك حساب بالفعل؟{" "}
         <Link href="/login" className="text-primary hover:underline">
-          Sign in
+          تسجيل الدخول
         </Link>
       </p>
     </form>

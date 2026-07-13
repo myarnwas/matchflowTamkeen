@@ -22,7 +22,7 @@ export async function signInTenant(
 ): Promise<ActionResult | never> {
   const parsed = tenantLoginSchema.safeParse(raw);
   if (!parsed.success) {
-    return { error: "Please check your email and password." };
+    return { error: "يرجى التحقق من البريد الإلكتروني وكلمة المرور." };
   }
 
   const supabase = await createClient();
@@ -32,7 +32,7 @@ export async function signInTenant(
   });
 
   if (error || !data.user) {
-    return { error: "Invalid email or password." };
+    return { error: "البريد الإلكتروني أو كلمة المرور غير صحيحة." };
   }
 
   // Enforce separation: this portal is for tenant users only. A platform admin
@@ -45,7 +45,7 @@ export async function signInTenant(
 
   if (!profile) {
     await supabase.auth.signOut();
-    return { error: "This account is not registered as a tenant user." };
+    return { error: "هذا الحساب غير مُسجَّل كمستخدم مستأجر." };
   }
 
   redirect("/dashboard");
@@ -61,7 +61,7 @@ export async function signUpTenant(
 ): Promise<ActionResult | never> {
   const parsed = tenantRegisterSchema.safeParse(raw);
   if (!parsed.success) {
-    return { error: parsed.error.issues[0]?.message ?? "Invalid input." };
+    return { error: parsed.error.issues[0]?.message ?? "مدخلات غير صالحة." };
   }
   const { companyName, fullName, email, password } = parsed.data;
 
@@ -89,9 +89,9 @@ export async function signUpTenant(
 
   if (createErr || !created.user) {
     if (createErr?.message?.toLowerCase().includes("already")) {
-      return { error: "An account with this email already exists." };
+      return { error: "يوجد حساب مُسجَّل بهذا البريد الإلكتروني بالفعل." };
     }
-    return { error: "Could not create your account. Please try again." };
+    return { error: "تعذّر إنشاء حسابك. يرجى المحاولة مرة أخرى." };
   }
   const userId = created.user.id;
 
@@ -104,7 +104,7 @@ export async function signUpTenant(
 
   if (tenantErr || !tenant) {
     await admin.auth.admin.deleteUser(userId);
-    return { error: "Could not create your organization. Please try again." };
+    return { error: "تعذّر إنشاء مؤسستك. يرجى المحاولة مرة أخرى." };
   }
 
   // 4. Create the owner profile as tenant_admin.
@@ -120,7 +120,7 @@ export async function signUpTenant(
     // Roll back tenant + user so a retry starts clean.
     await admin.from("tenants").delete().eq("id", tenant.id);
     await admin.auth.admin.deleteUser(userId);
-    return { error: "Could not finish setting up your account." };
+    return { error: "تعذّر إكمال إعداد حسابك." };
   }
 
   // 5. Establish the session on the cookie-based client.
@@ -146,7 +146,7 @@ export async function requestPasswordReset(
 ): Promise<ActionResult> {
   const parsed = forgotPasswordSchema.safeParse(raw);
   if (!parsed.success) {
-    return { error: "Please enter a valid email address." };
+    return { error: "يرجى إدخال بريد إلكتروني صالح." };
   }
 
   const supabase = await createClient();
@@ -158,6 +158,6 @@ export async function requestPasswordReset(
 
   return {
     success:
-      "If an account exists for that email, a reset link is on its way.",
+      "إذا كان هناك حساب مرتبط بهذا البريد الإلكتروني، فسيصلك رابط إعادة التعيين قريبًا.",
   };
 }

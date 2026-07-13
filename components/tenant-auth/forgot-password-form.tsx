@@ -53,7 +53,7 @@ export function ForgotPasswordForm() {
           <span>{successMessage}</span>
         </div>
         <Button variant="outline" className="w-full" asChild>
-          <Link href="/login">Back to sign in</Link>
+          <Link href="/login">العودة إلى تسجيل الدخول</Link>
         </Button>
       </div>
     );
@@ -72,11 +72,13 @@ export function ForgotPasswordForm() {
       )}
 
       <div className="space-y-2">
-        <Label htmlFor="email">Email</Label>
+        <Label htmlFor="email">البريد الإلكتروني</Label>
         <Input
           id="email"
           type="email"
           autoComplete="email"
+          dir="ltr"
+          className="text-start"
           placeholder="you@company.com"
           aria-invalid={!!errors.email}
           {...register("email")}
@@ -87,13 +89,13 @@ export function ForgotPasswordForm() {
       </div>
 
       <Button type="submit" className="w-full" disabled={isPending}>
-        {isPending ? "Sending…" : "Send reset link"}
+        {isPending ? "جارٍ الإرسال…" : "إرسال رابط إعادة التعيين"}
       </Button>
 
       <p className="text-center text-sm text-muted-foreground">
-        Remember your password?{" "}
+        هل تذكّرت كلمة المرور؟{" "}
         <Link href="/login" className="text-primary hover:underline">
-          Sign in
+          تسجيل الدخول
         </Link>
       </p>
     </form>

@@ -10,16 +10,16 @@ import {
 import { LoginForm } from "@/components/tenant-auth/login-form";
 
 export const metadata: Metadata = {
-  title: "Sign in — MatchFlow",
+  title: "تسجيل الدخول — MatchFlow",
 };
 
 export default function LoginPage() {
   return (
     <Card className="border-border/60 shadow-sm">
       <CardHeader className="space-y-1 text-center">
-        <CardTitle className="text-2xl">Welcome back</CardTitle>
+        <CardTitle className="text-2xl">مرحبًا بعودتك</CardTitle>
         <CardDescription>
-          Sign in to your MatchFlow workspace
+          سجّل الدخول إلى مساحة عمل MatchFlow الخاصة بك
         </CardDescription>
       </CardHeader>
       <CardContent>

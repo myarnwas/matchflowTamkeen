@@ -29,7 +29,7 @@ export function LoginForm() {
     setFormError(null);
     startTransition(async () => {
       const result = await signInTenant(values);
-      // On success the action redirects; we only reach here on failure.
+      // عند النجاح يقوم الإجراء بإعادة التوجيه؛ لا نصل هنا إلا عند الفشل.
       if (result && "error" in result) {
         setFormError(result.error);
       }
@@ -49,11 +49,13 @@ export function LoginForm() {
       )}
 
       <div className="space-y-2">
-        <Label htmlFor="email">Email</Label>
+        <Label htmlFor="email">البريد الإلكتروني</Label>
         <Input
           id="email"
           type="email"
           autoComplete="email"
+          dir="ltr"
+          className="text-start"
           placeholder="you@company.com"
           aria-invalid={!!errors.email}
           {...register("email")}
@@ -65,18 +67,20 @@ export function LoginForm() {
 
       <div className="space-y-2">
         <div className="flex items-center justify-between">
-          <Label htmlFor="password">Password</Label>
+          <Label htmlFor="password">كلمة المرور</Label>
           <Link
             href="/forgot-password"
             className="text-sm text-primary hover:underline"
           >
-            Forgot password?
+            هل نسيت كلمة المرور؟
           </Link>
         </div>
         <Input
           id="password"
           type="password"
           autoComplete="current-password"
+          dir="ltr"
+          className="text-start"
           placeholder="••••••••"
           aria-invalid={!!errors.password}
           {...register("password")}
@@ -87,13 +91,13 @@ export function LoginForm() {
       </div>
 
       <Button type="submit" className="w-full" disabled={isPending}>
-        {isPending ? "Signing in…" : "Sign in"}
+        {isPending ? "جارٍ تسجيل الدخول…" : "تسجيل الدخول"}
       </Button>
 
       <p className="text-center text-sm text-muted-foreground">
-        Don&apos;t have an account?{" "}
+        ليس لديك حساب؟{" "}
         <Link href="/register" className="text-primary hover:underline">
-          Start free trial
+          ابدأ التجربة المجانية
         </Link>
       </p>
     </form>

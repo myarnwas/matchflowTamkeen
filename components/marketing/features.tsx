@@ -12,39 +12,39 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const features = [
   {
     icon: GitCompareArrows,
-    title: "Automated matching engine",
+    title: "محرّك مطابقة آلي",
     description:
-      "A source-agnostic engine pairs external transactions against your internal ledger, scoring each match by confidence.",
+      "محرّك مستقل عن المصدر يطابق المعاملات الخارجية مع دفتر الأستاذ الداخلي، ويمنح كل تطابق درجة ثقة.",
   },
   {
     icon: Bell,
-    title: "Real-time discrepancy alerts",
+    title: "تنبيهات الفروقات في الوقت الفعلي",
     description:
-      "Mismatched amounts, missing entries, and duplicates surface the moment they appear — no month-end surprises.",
+      "تظهر المبالغ غير المتطابقة والقيود المفقودة والمعاملات المكرّرة فور حدوثها — دون مفاجآت في نهاية الشهر.",
   },
   {
     icon: ShieldCheck,
-    title: "Strict tenant isolation",
+    title: "عزل صارم للمستأجرين",
     description:
-      "Row Level Security enforced at the database. Your data is provably invisible to every other tenant on the platform.",
+      "أمان مستوى الصفوف (RLS) مُطبَّق في قاعدة البيانات. بياناتك غير مرئية إطلاقًا لأي مستأجر آخر على المنصة.",
   },
   {
     icon: FileSpreadsheet,
-    title: "Flexible ingestion",
+    title: "استيعاب مرن للبيانات",
     description:
-      "Connect live APIs or drop in CSV and Excel files. Every record lands in one unified, queryable ledger.",
+      "اربط واجهات API مباشرة أو ارفع ملفات CSV وExcel. تصل كل سجلاتك إلى دفتر أستاذ موحّد قابل للاستعلام.",
   },
   {
     icon: LineChart,
-    title: "Reconciliation dashboards",
+    title: "لوحات معلومات المطابقة",
     description:
-      "Track match rates, discrepancy trends, and outstanding items across every account from a single calm overview.",
+      "تابِع نِسب المطابقة واتجاهات الفروقات والبنود المُعلَّقة عبر جميع الحسابات من نظرة عامة واحدة هادئة.",
   },
   {
     icon: Workflow,
-    title: "Full audit trail",
+    title: "سجل تدقيق كامل",
     description:
-      "Every match, override, and manual adjustment is recorded in an append-only log built for financial compliance.",
+      "يُسجَّل كل تطابق وتعديل يدوي في سجل غير قابل للتعديل مُصمَّم للامتثال المالي.",
   },
 ];
 
@@ -54,11 +54,11 @@ export function Features() {
       <div className="container">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Everything you need to close the books with confidence
+            كل ما تحتاجه لإقفال الحسابات بثقة
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Purpose-built for finance teams that reconcile across many sources
-            and can&apos;t afford a single missed entry.
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            مُصمَّمة خصّيصًا للفرق المالية التي تُطابق عبر مصادر متعددة ولا يمكنها
+            تحمّل قيد واحد مفقود.
           </p>
         </div>
 

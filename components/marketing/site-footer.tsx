@@ -2,21 +2,21 @@ import Link from "next/link";
 import { Layers } from "lucide-react";
 
 const footerNav = {
-  Product: [
-    { href: "#features", label: "Features" },
-    { href: "#integrations", label: "Integrations" },
-    { href: "#pricing", label: "Pricing" },
-    { href: "#faq", label: "FAQ" },
+  المنتج: [
+    { href: "#features", label: "المميزات" },
+    { href: "#integrations", label: "التكاملات" },
+    { href: "#pricing", label: "الأسعار" },
+    { href: "#faq", label: "الأسئلة الشائعة" },
   ],
-  Company: [
-    { href: "#", label: "About" },
-    { href: "#", label: "Contact" },
-    { href: "#", label: "Careers" },
+  الشركة: [
+    { href: "#", label: "من نحن" },
+    { href: "#", label: "تواصل معنا" },
+    { href: "#", label: "الوظائف" },
   ],
-  Legal: [
-    { href: "#", label: "Privacy" },
-    { href: "#", label: "Terms" },
-    { href: "#", label: "Security" },
+  "قانوني": [
+    { href: "#", label: "الخصوصية" },
+    { href: "#", label: "الشروط" },
+    { href: "#", label: "الأمان" },
   ],
 };
 
@@ -34,9 +34,8 @@ export function SiteFooter() {
                 MatchFlow
               </span>
             </Link>
-            <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-              Multi-tenant financial reconciliation for teams that reconcile
-              across many sources.
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
+              مطابقة مالية متعددة المستأجرين للفرق التي تُطابق عبر مصادر متعددة.
             </p>
           </div>
 
@@ -63,11 +62,9 @@ export function SiteFooter() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-8 sm:flex-row">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} MatchFlow. All rights reserved.
+            © {new Date().getFullYear()} MatchFlow. جميع الحقوق محفوظة.
           </p>
-          <p className="text-sm text-muted-foreground">
-            إدارة المطابقة المالية
-          </p>
+          <p className="text-sm text-muted-foreground">إدارة المطابقة المالية</p>
         </div>
       </div>
     </footer>

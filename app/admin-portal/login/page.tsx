@@ -4,7 +4,7 @@ import { ShieldCheck, Lock } from "lucide-react";
 import { AdminLoginForm } from "@/components/admin/admin-login-form";
 
 export const metadata: Metadata = {
-  title: "Admin Portal — Secure Access",
+  title: "بوابة الإدارة — دخول آمن",
   robots: { index: false, follow: false },
 };
 
@@ -17,10 +17,10 @@ export default function AdminLoginPage() {
           <ShieldCheck className="h-6 w-6" />
         </span>
         <h1 className="text-xl font-semibold tracking-tight text-slate-100">
-          MatchFlow Platform Administration
+          إدارة منصة MatchFlow
         </h1>
         <p className="mt-1 text-sm text-slate-400">
-          Restricted access — authorized administrators only
+          وصول مقيّد — للمسؤولين المصرّح لهم فقط
         </p>
       </div>
 
@@ -30,7 +30,7 @@ export default function AdminLoginPage() {
 
       <p className="mt-6 flex items-center gap-1.5 text-xs text-slate-500">
         <Lock className="h-3 w-3" />
-        All access attempts are logged and monitored
+        تُسجَّل جميع محاولات الوصول وتُراقَب
       </p>
     </div>
   );

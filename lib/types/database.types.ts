@@ -293,7 +293,9 @@ export interface Database {
         Relationships: [];
       };
     };
-    Views: Record<string, never>;
+    Views: {
+      [_ in never]: never;
+    };
     Functions: {
       auth_tenant_id: {
         Args: Record<string, never>;
@@ -316,6 +318,8 @@ export interface Database {
       match_status: MatchStatus;
       match_type: MatchType;
     };
-    CompositeTypes: Record<string, never>;
+    CompositeTypes: {
+      [_ in never]: never;
+    };
   };
 }

@@ -15,51 +15,51 @@ import { cn } from "@/lib/utils";
 
 const tiers = [
   {
-    name: "Starter",
+    name: "المبتدئ",
     price: "$49",
-    cadence: "/month",
-    description: "For small teams reconciling a handful of accounts.",
+    cadence: "/شهريًا",
+    description: "للفرق الصغيرة التي تطابق عددًا محدودًا من الحسابات.",
     featured: false,
     features: [
-      "Up to 3 data sources",
-      "5,000 transactions / month",
-      "CSV & Excel uploads",
-      "2 team members",
-      "Email support",
+      "حتى 3 مصادر بيانات",
+      "5,000 معاملة شهريًا",
+      "رفع ملفات CSV وExcel",
+      "عضوان في الفريق",
+      "دعم عبر البريد الإلكتروني",
     ],
-    cta: "Start free trial",
+    cta: "ابدأ التجربة المجانية",
   },
   {
-    name: "Growth",
+    name: "النمو",
     price: "$149",
-    cadence: "/month",
-    description: "For finance teams scaling across multiple providers.",
+    cadence: "/شهريًا",
+    description: "للفرق المالية التي تتوسّع عبر مزوّدين متعددين.",
     featured: true,
     features: [
-      "Up to 10 data sources",
-      "50,000 transactions / month",
-      "All API integrations",
-      "10 team members",
-      "Real-time discrepancy alerts",
-      "Priority support",
+      "حتى 10 مصادر بيانات",
+      "50,000 معاملة شهريًا",
+      "جميع تكاملات API",
+      "10 أعضاء في الفريق",
+      "تنبيهات الفروقات في الوقت الفعلي",
+      "دعم ذو أولوية",
     ],
-    cta: "Start free trial",
+    cta: "ابدأ التجربة المجانية",
   },
   {
-    name: "Enterprise",
-    price: "Custom",
+    name: "المؤسسات",
+    price: "مخصّص",
     cadence: "",
-    description: "For organizations with advanced compliance needs.",
+    description: "للمؤسسات ذات احتياجات الامتثال المتقدّمة.",
     featured: false,
     features: [
-      "Unlimited data sources",
-      "Unlimited transactions",
-      "Custom ERP integrations",
-      "Unlimited team members",
-      "Dedicated success manager",
-      "SLA & audit support",
+      "مصادر بيانات غير محدودة",
+      "معاملات غير محدودة",
+      "تكاملات ERP مخصّصة",
+      "أعضاء فريق غير محدودين",
+      "مدير نجاح مُخصَّص",
+      "اتفاقية مستوى خدمة ودعم التدقيق",
     ],
-    cta: "Contact sales",
+    cta: "تواصل مع المبيعات",
   },
 ];
 
@@ -69,10 +69,10 @@ export function Pricing() {
       <div className="container">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Simple, transparent pricing
+            أسعار بسيطة وشفّافة
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Start free for 14 days. Upgrade only when you&apos;re ready.
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            ابدأ مجانًا لمدة 14 يومًا. لا تدفع إلا عندما تكون جاهزًا.
           </p>
         </div>
 
@@ -89,7 +89,7 @@ export function Pricing() {
               <CardHeader>
                 <div className="flex items-center justify-between">
                   <CardTitle className="text-xl">{tier.name}</CardTitle>
-                  {tier.featured && <Badge>Most popular</Badge>}
+                  {tier.featured && <Badge>الأكثر رواجًا</Badge>}
                 </div>
                 <div className="mt-2 flex items-baseline gap-1">
                   <span className="text-4xl font-bold tracking-tight text-foreground">
@@ -122,9 +122,7 @@ export function Pricing() {
                   asChild
                 >
                   <Link
-                    href={
-                      tier.name === "Enterprise" ? "#contact" : "/register"
-                    }
+                    href={tier.name === "المؤسسات" ? "#contact" : "/register"}
                   >
                     {tier.cta}
                   </Link>

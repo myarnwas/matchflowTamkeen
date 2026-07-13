@@ -18,7 +18,7 @@ export async function signInAdmin(
 ): Promise<ActionResult | never> {
   const parsed = adminLoginSchema.safeParse(raw);
   if (!parsed.success) {
-    return { error: "Please check your credentials." };
+    return { error: "يرجى التحقق من بيانات الاعتماد." };
   }
 
   const supabase = await createClient();
@@ -28,7 +28,7 @@ export async function signInAdmin(
   });
 
   if (error || !data.user) {
-    return { error: "Invalid credentials." };
+    return { error: "بيانات اعتماد غير صحيحة." };
   }
 
   const { data: admin } = await supabase
@@ -38,9 +38,9 @@ export async function signInAdmin(
     .maybeSingle();
 
   if (!admin) {
-    // Not a platform admin — revoke the session and deny access.
+    // ليس مسؤول منصة — إلغاء الجلسة ومنع الوصول.
     await supabase.auth.signOut();
-    return { error: "This account is not authorized for the admin portal." };
+    return { error: "هذا الحساب غير مُصرَّح له بالوصول إلى بوابة الإدارة." };
   }
 
   redirect("/admin-portal");

@@ -4,10 +4,10 @@ import { Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { href: "#features", label: "Features" },
-  { href: "#integrations", label: "Integrations" },
-  { href: "#pricing", label: "Pricing" },
-  { href: "#faq", label: "FAQ" },
+  { href: "#features", label: "المميزات" },
+  { href: "#integrations", label: "التكاملات" },
+  { href: "#pricing", label: "الأسعار" },
+  { href: "#faq", label: "الأسئلة الشائعة" },
 ];
 
 export function SiteHeader() {
@@ -37,10 +37,10 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2">
           <Button variant="ghost" size="sm" asChild>
-            <Link href="/login">Sign in</Link>
+            <Link href="/login">تسجيل الدخول</Link>
           </Button>
           <Button size="sm" asChild>
-            <Link href="/register">Start free trial</Link>
+            <Link href="/register">ابدأ التجربة المجانية</Link>
           </Button>
         </div>
       </div>

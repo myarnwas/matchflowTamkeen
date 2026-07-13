@@ -48,15 +48,16 @@ export function AdminLoginForm() {
 
       <div className="space-y-2">
         <Label htmlFor="email" className="text-slate-300">
-          Administrator email
+          البريد الإلكتروني للمسؤول
         </Label>
         <Input
           id="email"
           type="email"
           autoComplete="email"
+          dir="ltr"
           placeholder="admin@matchflow.io"
           aria-invalid={!!errors.email}
-          className="border-slate-700 bg-slate-900/60 text-slate-100 placeholder:text-slate-500 focus-visible:ring-slate-400"
+          className="border-slate-700 bg-slate-900/60 text-start text-slate-100 placeholder:text-slate-500 focus-visible:ring-slate-400"
           {...register("email")}
         />
         {errors.email && (
@@ -66,15 +67,16 @@ export function AdminLoginForm() {
 
       <div className="space-y-2">
         <Label htmlFor="password" className="text-slate-300">
-          Password
+          كلمة المرور
         </Label>
         <Input
           id="password"
           type="password"
           autoComplete="current-password"
+          dir="ltr"
           placeholder="••••••••"
           aria-invalid={!!errors.password}
-          className="border-slate-700 bg-slate-900/60 text-slate-100 placeholder:text-slate-500 focus-visible:ring-slate-400"
+          className="border-slate-700 bg-slate-900/60 text-start text-slate-100 placeholder:text-slate-500 focus-visible:ring-slate-400"
           {...register("password")}
         />
         {errors.password && (
@@ -87,7 +89,7 @@ export function AdminLoginForm() {
         disabled={isPending}
         className="w-full bg-slate-100 text-slate-900 hover:bg-white"
       >
-        {isPending ? "Authenticating…" : "Access admin portal"}
+        {isPending ? "جارٍ المصادقة…" : "الدخول إلى بوابة الإدارة"}
       </Button>
     </form>
   );

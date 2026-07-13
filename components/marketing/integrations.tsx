@@ -6,42 +6,37 @@ import { Badge } from "@/components/ui/badge";
 const integrations = [
   {
     icon: Landmark,
-    name: "Bank of Palestine",
-    nameAr: "بنك فلسطين",
+    name: "بنك فلسطين",
     description:
-      "Ingest bank statements and transaction feeds directly, via API or standard statement files.",
-    status: "Available",
+      "استقبِل كشوف الحساب البنكية وتدفّقات المعاملات مباشرةً، عبر واجهة API أو ملفات الكشوف القياسية.",
+    status: "متاح",
   },
   {
     icon: Smartphone,
-    name: "Jawwal Pay",
-    nameAr: "جوال بي",
+    name: "جوال بي",
     description:
-      "Pull mobile wallet settlements and reconcile them against your recorded receipts.",
-    status: "Available",
+      "استورِد تسويات المحفظة الإلكترونية وطابِقها مع الإيصالات المسجّلة لديك.",
+    status: "متاح",
   },
   {
     icon: CreditCard,
-    name: "PayPal",
-    nameAr: "باي بال",
+    name: "باي بال",
     description:
-      "Sync PayPal transactions and payouts through the official API with automatic currency handling.",
-    status: "Available",
+      "زامِن معاملات ومدفوعات PayPal عبر الواجهة الرسمية مع معالجة تلقائية للعملات.",
+    status: "متاح",
   },
   {
     icon: Server,
-    name: "ERP Systems",
-    nameAr: "أنظمة تخطيط الموارد",
+    name: "أنظمة تخطيط الموارد (ERP)",
     description:
-      "Connect your accounting or ERP platform over its API to keep journal entries in lockstep.",
-    status: "API-driven",
+      "اربط منصّتك المحاسبية أو نظام ERP عبر واجهته البرمجية لإبقاء القيود متطابقة.",
+    status: "عبر واجهة API",
   },
   {
     icon: Database,
-    name: "Internal Records",
-    nameAr: "السجلات المالية الداخلية",
+    name: "السجلات المالية الداخلية",
     description:
-      "Upload your own internal ledgers as CSV or Excel — the baseline every source is matched against.",
+      "ارفع دفاترك الداخلية بصيغة CSV أو Excel — وهي الأساس الذي تُطابَق معه كل المصادر.",
     status: "CSV / Excel",
   },
 ];
@@ -55,14 +50,14 @@ export function Integrations() {
       <div className="container">
         <div className="mx-auto max-w-2xl text-center">
           <Badge variant="outline" className="mb-4">
-            Multi-source integration
+            تكامل متعدد المصادر
           </Badge>
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            One ledger for every financial source
+            دفتر أستاذ واحد لكل مصدر مالي
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Heterogeneous feeds land in a single unified ledger, so the matching
-            engine treats every source the same way.
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            تصل التدفّقات غير المتجانسة إلى دفتر أستاذ موحّد، فيتعامل محرّك
+            المطابقة مع كل مصدر بالطريقة نفسها.
           </p>
         </div>
 
@@ -76,15 +71,7 @@ export function Integrations() {
                   </span>
                   <Badge variant="secondary">{item.status}</Badge>
                 </div>
-                <CardTitle className="mt-4 flex items-center gap-2 text-lg">
-                  {item.name}
-                  <span
-                    dir="rtl"
-                    className="text-sm font-normal text-muted-foreground"
-                  >
-                    {item.nameAr}
-                  </span>
-                </CardTitle>
+                <CardTitle className="mt-4 text-lg">{item.name}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm leading-relaxed text-muted-foreground">
